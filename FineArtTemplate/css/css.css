@@ -1,9 +1,28 @@
-
-body
-{
-   margin:  0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Sulphur Point', sans-serif;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sulphur Point', sans-serif;
 }
 
+.gradint-layer {
+    text-align: center;
+}
+
+.main-heading {
+    padding-top: 300px;
+    font-size: 100px;
+}
+
+.button {
+    border: 1px solid #333;
+    width: 300px;
+    margin-left: 650px;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+.main-button {
+    text-decoration: none;
+    font-size: 20px;
+}
