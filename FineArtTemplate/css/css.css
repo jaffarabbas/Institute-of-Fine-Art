@@ -26,3 +26,37 @@ body {
     text-decoration: none;
     font-size: 20px;
 }
+
+
+/* pannel */
+
+.main {
+    border: 5px solid #333333;
+    margin-left: 350px;
+    margin-top: 150px;
+    height: 600px;
+    width: 1000px;
+}
+
+.panel-student {
+    margin-left: -50px;
+    margin-top: 70px;
+    width: 650px;
+    height: 450px;
+}
+
+.head-student {
+    font-size: 50px;
+    padding-top: 150px;
+    margin-left: 100px;
+}
+
+.into-student {
+    margin-top: 140px;
+    margin-left: 100px;
+}
+
+.btn-student {
+    border: 2px solid #333;
+    padding: 40px 100px;
+}
