@@ -29,26 +29,33 @@ body {
 
 
 /* pannel */
+.sec
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .main {
     border: 5px solid #333333;
-    margin-left: 350px;
-    margin-top: 150px;
-    height: 600px;
-    width: 1000px;
+    /* margin-left: 300px; */
+    margin-top: 120px;
+    height: 400px;
+    width: 800px;
+    background-color: #9068C0;
 }
 
 .panel-student {
     margin-left: -50px;
-    margin-top: 70px;
-    width: 650px;
-    height: 450px;
+    margin-top: 30px;
+    width: 450px;
+    height: 350px;
 }
 
 .head-student {
     font-size: 50px;
-    padding-top: 150px;
-    margin-left: 100px;
+    padding-top: 80px;
+    margin-left: 50px; 
 }
 
 .into-student {
@@ -59,4 +66,6 @@ body {
 .btn-student {
     border: 2px solid #333;
     padding: 40px 100px;
+    margin-left: -100px;
+    margin-top: -100px;
 }
