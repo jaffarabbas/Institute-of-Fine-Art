@@ -3,6 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sulphur Point', sans-serif;
+    background-color: #BFF05D;
 }
 
 .gradint-layer {
@@ -34,15 +35,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+ 
 }
 
 .main {
-    border: 5px solid #333333;
-    /* margin-left: 300px; */
+    border: none;
     margin-top: 120px;
     height: 400px;
     width: 800px;
-    background-color: #9068C0;
+    box-shadow: 0px 0px 10px #333;
 }
 
 .panel-student {
@@ -55,17 +56,68 @@ body {
 .head-student {
     font-size: 50px;
     padding-top: 80px;
-    margin-left: 50px; 
+    margin-left: 30px; 
 }
-
+.head-manager
+{
+    font-size: 50px;
+    padding-top: 80px;
+    margin-left: 30px; 
+}
+.head-admin
+{
+    font-size: 50px;
+    padding-top: 80px;
+    margin-left: 30px; 
+}
+.head-staff
+{
+    font-size: 50px;
+    padding-top: 80px;
+    margin-left: 30px; 
+}
 .into-student {
-    margin-top: 140px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.into-manager {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.into-staff {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.into-admin {
+    margin-top: 100px;
     margin-left: 100px;
 }
 
 .btn-student {
-    border: 2px solid #333;
-    padding: 40px 100px;
+    border: none;
+    padding: 30px 100px;
     margin-left: -100px;
-    margin-top: -100px;
+    background-color: #9068C0;
+    color: whitesmoke;
+}
+.btn-admin {
+    border: none;
+    padding: 30px 100px;
+    margin-left: -100px;
+    background-color: #9068C0;
+    color: whitesmoke;
+}
+.btn-manager {
+    border: none;
+    padding: 30px 100px;
+    margin-left: -100px;
+    background-color: #9068C0;
+    color: whitesmoke;
+}
+.btn-staff {
+    border: none;
+    padding: 30px 100px;
+    margin-left: -100px;
+    background-color: #9068C0;
+    color: whitesmoke;
 }
