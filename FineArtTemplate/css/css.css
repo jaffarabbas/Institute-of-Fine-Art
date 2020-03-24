@@ -3,22 +3,28 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sulphur Point', sans-serif;
-    background-color: #BFF05D;
+/*    background-color: #333634;*/
 }
 
-.gradint-layer {
+.panel {
+    background-image: url('..\images\stabmenubghv.png');
     text-align: center;
 }
 
 .main-heading {
-    padding-top: 300px;
+    padding-top: 140px;
     font-size: 100px;
+}
+
+.gradint-layer
+{
+    background-image: url('..\images\photo-1460661419201-fd4cecdf8a8b.jpg');
 }
 
 .button {
     border: 1px solid #333;
     width: 300px;
-    margin-left: 650px;
+    margin-left: 500px;
     margin-top: 70px;
     padding: 20px;
 }
@@ -43,7 +49,7 @@ body {
     margin-top: 120px;
     height: 400px;
     width: 800px;
-    box-shadow: 0px 0px 10px #333;
+    box-shadow: 0px 0px 20px #333;
 }
 
 .panel-student {
