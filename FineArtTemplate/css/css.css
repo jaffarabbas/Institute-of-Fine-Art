@@ -101,29 +101,74 @@ body {
 
 .btn-student {
     border: none;
-    padding: 30px 100px;
+    padding: 20px 100px;
     margin-left: -100px;
-    background-color: #9068C0;
+    background-color: #333;
     color: whitesmoke;
+    font-size: 30px;
 }
 .btn-admin {
     border: none;
-    padding: 30px 100px;
+    padding: 20px 100px;
     margin-left: -100px;
-    background-color: #9068C0;
+    background-color: #333;
     color: whitesmoke;
+    font-size: 30px;
 }
 .btn-manager {
     border: none;
-    padding: 30px 100px;
+    padding: 20px 100px;
     margin-left: -100px;
-    background-color: #9068C0;
+    background-color: #333;
     color: whitesmoke;
+    font-size: 30px;
 }
 .btn-staff {
     border: none;
-    padding: 30px 100px;
+    padding: 20px 100px;
     margin-left: -100px;
-    background-color: #9068C0;
+    background-color: #333;
     color: whitesmoke;
+    font-size: 30px;
+}
+
+#form
+{
+    width: 300px;
+    padding: 10px;
+    margin-top: -40px;
+}
+
+#login-btn
+{
+    background-color: #f5b907;
+}
+
+#login-name
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-pass
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-btn
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#cros
+{
+    font-size: 20px;
+    float: right;
+    padding-top: 20px;
+    margin-top: -30px;
+}
+
+#man
+{
+    padding: 20px;
 }
