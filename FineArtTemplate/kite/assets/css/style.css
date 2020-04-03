@@ -401,16 +401,29 @@ a:focus{
 	border-color: transparent;
 }
 
+.back-btn{
+	padding: 10px 30px;
+	background-color: #00aaff;
+	border: none;
+	margin-top: -100px;
+}
+.back{
+
+}
+
 
 @media (max-width: 992px) {
     .navbar-header {
         float: none;
-    }
+	}
+	.section-name{
+		padding-top: 200px;
+	}
     .navbar-left,.navbar-right {
         float: none !important;
     }
     .navbar-toggle {
-        display: block;
+		display: block;
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -954,6 +967,10 @@ form.news-letter .btn:hover{
 	}
 		#contact-form  .btn{
 	border-left:1px solid #fff;
+	}
+	.navbar-header
+	{
+		margin-top: 100px;
 	}
 }
 
