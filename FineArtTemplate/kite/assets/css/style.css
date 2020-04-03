@@ -1002,6 +1002,49 @@ form.news-letter .btn:hover{
 	}
 }
 
+
+.page-footer
+{
+   background-color:rgba(0,165,255,0.3);
+   color: #fff;
+   font-style: inherit;
+}
+
+.mb-5
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 13px 35px;
+   font-size: 30px;
+}
+
+.fa-facebook-f
+{
+   color: #3b5998;
+}
+
+.fa-twitter
+{
+   color:#00acee ;
+}
+
+.fa-google-plus-g
+{
+   color: #db4a39;
+}
+
+.fa-instagram
+{
+color: #8a3ab9;
+}
+
+.fa-pinterest
+{
+   color: #c8232c;
+}
+
+
 /* 9.2 - media screen and (max-width: 768px) End
 ------------------------------------------------ */
 
