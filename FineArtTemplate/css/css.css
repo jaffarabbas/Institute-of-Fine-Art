@@ -141,6 +141,33 @@ body {
     display: none;
 }
 
+#form2
+{
+    width: 300px;
+    padding: 10px;
+    margin-top: -40px;
+    transition: 1s;
+    display: none;
+}
+
+#form3
+{
+    width: 300px;
+    padding: 10px;
+    margin-top: -40px;
+    transition: 1s;
+    display: none;
+}
+
+#form4
+{
+    width: 300px;
+    padding: 10px;
+    margin-top: -40px;
+    transition: 1s;
+    display: none;
+}
+
 #login-btn
 {
     background-color: #f5b907;
@@ -162,25 +189,139 @@ body {
     padding: 10px;
 }
 
+#login-btn2
+{
+    background-color: #f5b907;
+}
+
+#login-name2
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-pass2
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-btn2
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#login-btn3
+{
+    background-color: #f5b907;
+}
+
+#login-name3
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-pass3
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-btn3
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#login-btn4
+{
+    background-color: #f5b907;
+}
+
+#login-name4
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-pass4
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#login-btn4
+{
+    margin-bottom: 30px;
+    padding: 10px;
+}
 #cros
 {
     font-size: 20px;
-    float: right;
+    float: left;
     padding-top: 20px;
     margin-top: -80px;
     display: none;
+    cursor: pointer;
 }
+#cros2
+{
+    font-size: 20px;
+    float: left;
+    padding-top: 20px;
+    margin-top: -80px;
+    display: none;
+    cursor: pointer;
+}
+
+#cros3
+{
+    font-size: 20px;
+    float: left;
+    padding-top: 20px;
+    margin-top: -80px;
+    display: none;
+    cursor: pointer;
+}
+
+#cros4
+{
+    font-size: 20px;
+    float: left;
+    padding-top: 20px;
+    margin-top: -80px;
+    display: none;
+    cursor: pointer;
+}
+
 
 #man
 {
     padding: 20px;
 }
 
+#man2
+{
+    padding: 20px;
+}
+
+#man3
+{
+    padding: 20px;
+}
+
+#man4
+{
+    padding: 20px;
+}
 
 
-
-
-
+@media(max-width:768px) {
+    .img{
+        display: none;
+    }
+    .head{
+        margin-left: 100px;
+        margin-top: -10px;
+        align-items: center;
+    }
+}
 
 
 
