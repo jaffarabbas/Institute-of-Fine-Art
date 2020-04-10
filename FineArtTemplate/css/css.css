@@ -311,6 +311,24 @@ body {
     padding: 20px;
 }
 
+#img1{
+    height: 400px;
+    width: 500px;
+    margin-top: -10px;
+}
+
+#img2{
+    height: 300px;
+    width: 300px;
+    margin-left: 53px;
+    margin-top: 30px;
+}
+
+#cros_sec{
+    font-size: 30px;
+    margin-top: -400px;
+}
+
 
 @media(max-width:768px) {
     .img{
@@ -321,9 +339,56 @@ body {
         margin-top: -10px;
         align-items: center;
     }
+    #form2{
+        margin-left: 90px;
+    }
+    #form3{
+        margin-left: 90px;
+    }
+    #form4{
+        margin-left: 90px;
+    }
+    #head-log2{
+        margin-left: 50px;
+    }
+    #head-log3{
+        margin-left: 40px;
+    }
+    #head-log4{
+        margin-left: 70px;
+    }
 }
 
+.Insert_main{
+    display: none;
 
+}
+#staff_insert{
+    display: none;
+}
+.form_inser{
+    padding: 10px 20px;
+}
+
+.Ins_staff{
+    font-size: 30px;
+    text-align: center;
+}
+.Insert_Student{
+    display: none;
+
+}
+#Student_insert{
+    display: none;
+}
+.form_stu_inser{
+    padding: 10px 20px;
+}
+
+.Ins_stud{
+    font-size: 30px;
+    text-align: center;
+}
 
 
 /*=============================================================
@@ -353,7 +418,7 @@ body {
     
     #page-wrapper {
         padding: 15px 15px;
-        min-height: 600px;
+        min-height: 300px;
         background: #202020;
     }
     
@@ -362,7 +427,7 @@ body {
         margin: 10px 20px 10px 0px;
         background-color: #fff!important;
         padding: 10px;
-        min-height: 1200px;
+        max-height: 700px;
     }
     
     .text-center {
