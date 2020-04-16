@@ -395,6 +395,10 @@ body {
 #hed {
     background-image: url('../assets/img/bg-masthead.jpg');
 }
+
+.btn-b{
+    background-color:red;
+}
 /*=============================================================
     Authour URI: www.binarycart.com
     License: Commons Attribution 3.0

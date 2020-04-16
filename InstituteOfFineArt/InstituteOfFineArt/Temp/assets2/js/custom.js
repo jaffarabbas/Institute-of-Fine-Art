@@ -215,3 +215,25 @@
     });
 
 }(jQuery));
+
+
+function mypop() {
+    var x = document.getElementById("staff_inser");
+    var y = document.getElementById("Student_insert");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none"
+    } else {
+        x.style.display = "none";
+    }
+}
+function mypop2() {
+    var x = document.getElementById("Student_insert");
+    var y = document.getElementById("staff_inser");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+    }
+}

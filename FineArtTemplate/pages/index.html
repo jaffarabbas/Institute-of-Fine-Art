@@ -15,27 +15,28 @@
 </head>
 
 <body id="page-top" class="animated lightSpeedIn">
-	<!-- Preloader -->
-	<div id="preloader">
-		<div id="loader">
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="dot"></div>
-			<div class="lading"></div>
-		</div>
-	</div><!-- /#preloader -->
-	<!-- Preloader End-->
-<a href="#" class="menu-toggle rounded"><i class="fa fa-bars"></i></a>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="lading"></div>
+        </div>
+    </div><!-- /#preloader -->
+    <!-- Preloader End-->
+    <a href="#" class="menu-toggle rounded"><i class="fa fa-bars"></i></a>
     <nav class="navbar navbar-light navbar-expand" id="sidebar-wrapper">
-        <div class="container"><button class="navbar-toggler d-none" data-toggle="collapse" data-target="#"></button>
+        <div class="container">
+            <button class="navbar-toggler d-none" data-toggle="collapse" data-target="#"></button>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav sidebar-nav" id="sidebar-nav">
-                    <li class="nav-item sidebar-brand"  role="presentation"><a class="nav-link active js-scroll-trigger" href="#page-top" style="padding: 3px -20px;">Institute Of Fine Arts</a></li>
+                    <li class="nav-item sidebar-brand" role="presentation"><a class="nav-link active js-scroll-trigger" href="#page-top" style="padding: 3px -20px;">Institute Of Fine Arts</a></li>
                     <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="home.html">Home</a></li>
                     <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                     <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">Galley</a></li>
@@ -46,13 +47,14 @@
     </nav>
     <header class="d-flex masthead" id="hed" style="">
         <div class="container my-auto text-center">
-            <h1 class="mb-1">Institute Of Fine Arts</h1>
-            <h3 class="mb-5"><em>Institute Portal</em></h3><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="slider.html">Find Out More</a>
+            <h1 class="mb-1">Institute Of Fine Arts</h1><!--class="btn btn-primary btn-xl js-scroll-trigger" role="button" @Html.ActionLink("slider.cshtml")-->
+            <h3 class="mb-5"><em>Institute Portal</em></h3>
+            <a href="@Url.Action("Click me"),new{@class="btn btn-primary btn-xl js-scroll-trigger"}"></a>
             <div class="overlay"></div>
         </div>
     </header>
 
-        </div><a href="#page-top" class="js-scroll-trigger scroll-to-top rounded"><i class="fa fa-angle-up"></i></a></div>
+    <div><a href="#page-top" class="js-scroll-trigger scroll-to-top rounded"><i class="fa fa-angle-up"></i></a></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

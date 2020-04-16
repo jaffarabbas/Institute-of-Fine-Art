@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,6 @@
 <link href="~/Temp/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Temp/assets/fonts/font-awesome.min.css" rel="stylesheet" />
 <link href="~/Temp/assets/fonts/simple-line-icons.min.css" rel="stylesheet" />
-
 <link href="~/Temp/css/main.css" rel="stylesheet" />
 <body id="page-top">
     <!-- Preloader -->
@@ -47,11 +47,11 @@
     <header class="d-flex masthead" id="hed">
         <div class="container my-auto text-center">
             <h1 class="mb-1">Institute Of Fine Arts</h1>
-            <h3 class="mb-5"><em>Institute Portal</em></h3><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="slider.html">Find Out More</a>
+            <h3 class="mb-5"><em>Institute Portal</em></h3><a href="@Url.Action("login","Login")" class="btn btn-primary btn-xl js-scroll-trigger" role="button" >Find Out More</a>
             <div class="overlay"></div>
         </div>
     </header>
-
+    <h2>Index</h2>
     <div><a href="#page-top" class="js-scroll-trigger scroll-to-top rounded"><i class="fa fa-angle-up"></i></a></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -63,3 +63,4 @@
 <script src="~/Temp/cdn/bootstrap.min.js"></script>
 <script src="~/Temp/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="~/Temp/js/main.js"></script>
+

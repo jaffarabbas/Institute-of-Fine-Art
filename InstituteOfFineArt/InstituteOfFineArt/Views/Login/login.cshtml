@@ -1,7 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "Slider";
+    ViewBag.Title = "login";
 }
+
 <link href="~/Temp/cdn/animate.min.css" rel="stylesheet" />
 <link href="~/Temp/cdn/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Temp/cdn/font-awesome.min.css" rel="stylesheet" />
@@ -12,7 +13,7 @@
 <link href="~/Temp/css/main.css" rel="stylesheet" />
 
 <body style="background-color: #f5b907;">
-    <a href="index.html" id="cros_sec" style="text-decoration: none; color: #333;"><i class="fa fa-close"></i></a>
+    <a href="@Url.Action("index","Home")" id="cros_sec" style="text-decoration: none; color: #333;"><i class="fa fa-close"></i></a>
     <section class="sec animated lightSpeedIn">
 
         <div class="main card animated lightSpeedIn" id="card">
@@ -145,3 +146,6 @@
 <script>
 
 </script>
+
+
+
