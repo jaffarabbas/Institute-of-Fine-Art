@@ -271,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -291,7 +292,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FineLogin.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Login.cs">
+    <Compile Include="Models\staff.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student.cs">
       <DependentUpon>FineLogin.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -336,6 +340,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\login.cshtml" />
+    <Content Include="Views\Admin\admin.cshtml" />
+    <Content Include="Views\Admin\admin_s.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

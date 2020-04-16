@@ -25,6 +25,7 @@ namespace InstituteOfFineArt.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<staff> staffs { get; set; }
+        public virtual DbSet<student> students { get; set; }
     }
 }

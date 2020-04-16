@@ -1,0 +1,27 @@
+ <label class="Ins_staff text-center">Insert Staff</label><br><br>
+                                    <label>Name</label>
+                                    <input type="text" class="name form-control" id="name_reg" />
+                                    <label>Id</label>
+                                    <input type="text" class="Id form-control" id="ID_reg" />
+                                    <label>Email</label>
+                                    <input type="email" class="email form-control" id="email_reg" />
+                                    <label>Number</label>
+                                    <input type="tel" class="tele form-control" id="tele_reg" />
+                                    <label>Qualification</label>
+                                    <input type="text" class="Qual form-control" id="Qual_reg" />
+                                    <label>Class</label>
+                                    <input type="text" class="cla form-control" id="cla_reg" />
+                                    <label>Subject</label>
+                                    <input type="text" class="sub form-control" id="sub_reg" />
+                                    <label>Gender</label><br>
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male">Male</label><br>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">Female</label><br>
+                                    <input type="radio" id="other" name="gender" value="other">
+                                    <label for="other">Other</label><br>
+                                    <label for="pwd">Password</label>
+                                    <input type="password" id="pwd" name="pwd" class="form-control">
+                                    <label for="pwd">Confirm Password</label>
+                                    <input type="password" id="pwd" name="pwd" class="form-control"><br>
+                                    <input type="submit" class="btn btn-warning form-control" id="btn_reg" />

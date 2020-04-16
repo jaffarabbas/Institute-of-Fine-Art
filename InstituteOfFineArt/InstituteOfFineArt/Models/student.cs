@@ -12,10 +12,17 @@ namespace InstituteOfFineArt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Login
+    public partial class student
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Email { get; set; }
+        public int age { get; set; }
+        public int Number { get; set; }
+        public string Class { get; set; }
+        public string Subject { get; set; }
+        public string gender { get; set; }
         public string Password { get; set; }
+        public string Co_Password { get; set; }
     }
 }
