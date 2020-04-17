@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="FINE_ARTSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admine">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nmae" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="managers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
         <EntityType Name="staff">
           <Key>
             <PropertyRef Name="Id" />
@@ -36,6 +52,8 @@
           <Property Name="Co-Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="FINE_ARTSModelStoreContainer">
+          <EntitySet Name="admine" EntityType="Self.admine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="managers" EntityType="Self.managers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -46,6 +64,8 @@
         <EntityContainer Name="FINE_ARTSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="staffs" EntityType="FINE_ARTSModel.staff" />
           <EntitySet Name="students" EntityType="FINE_ARTSModel.student" />
+          <EntitySet Name="admines" EntityType="FINE_ARTSModel.admine" />
+          <EntitySet Name="managers" EntityType="FINE_ARTSModel.manager" />
         </EntityContainer>
         <EntityType Name="staff">
           <Key>
@@ -76,6 +96,22 @@
           <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Co_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="admine">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nmae" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="manager">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -110,6 +146,24 @@
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admines">
+            <EntityTypeMapping TypeName="FINE_ARTSModel.admine">
+              <MappingFragment StoreEntitySet="admine">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Nmae" ColumnName="Nmae" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="managers">
+            <EntityTypeMapping TypeName="FINE_ARTSModel.manager">
+              <MappingFragment StoreEntitySet="managers">
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

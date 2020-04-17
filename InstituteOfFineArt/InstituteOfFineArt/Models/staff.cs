@@ -16,7 +16,6 @@ namespace InstituteOfFineArt.Models
 
     public partial class staff
     {
-       
         public int Id { get; set; }
         [Required(ErrorMessage ="Required")]
         public string Name { get; set; }
@@ -25,17 +24,18 @@ namespace InstituteOfFineArt.Models
         [Required(ErrorMessage = "Required")]
         public int Number { get; set; }
         [Required(ErrorMessage = "Required")]
+        public string gender { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string Qualification { get; set; }
         [Required(ErrorMessage = "Required")]
         public string Class { get; set; }
         [Required(ErrorMessage = "Required")]
         public string Subject { get; set; }
         [Required(ErrorMessage = "Required")]
-        public string gender { get; set; }
-        [Required(ErrorMessage = "Required")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Required")]
         [DisplayName("Confirm Password")]
+        []
         public string Co_Password { get; set; }
     }
 }

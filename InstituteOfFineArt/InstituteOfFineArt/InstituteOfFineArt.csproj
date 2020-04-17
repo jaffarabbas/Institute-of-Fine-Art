@@ -274,8 +274,14 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admine.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FineLogin.Context.cs">
       <AutoGen>True</AutoGen>
@@ -342,6 +348,9 @@
     <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Admin\admin.cshtml" />
     <Content Include="Views\Admin\admin_s.cshtml" />
+    <Content Include="Views\Student\student_panel.cshtml" />
+    <Content Include="Views\Staff\Staff_pannel.cshtml" />
+    <Content Include="Views\Manager\manager.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

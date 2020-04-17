@@ -7,6 +7,8 @@
       <Diagram DiagramId="31176d7850a34f719224e4ad37ec90c7" Name="Diagram1" ZoomLevel="129">
         <EntityTypeShape EntityType="FINE_ARTSModel.staff" Width="1.5" PointX="0.5" PointY="0.75" />
         <EntityTypeShape EntityType="FINE_ARTSModel.student" Width="1.5" PointX="2.25" PointY="0.75" />
+        <EntityTypeShape EntityType="FINE_ARTSModel.admine" Width="1.5" PointX="4.125" PointY="0.75" />
+        <EntityTypeShape EntityType="FINE_ARTSModel.manager" Width="1.5" PointX="4.25" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

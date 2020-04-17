@@ -27,5 +27,7 @@ namespace InstituteOfFineArt.Models
     
         public virtual DbSet<staff> staffs { get; set; }
         public virtual DbSet<student> students { get; set; }
+        public virtual DbSet<admine> admines { get; set; }
+        public virtual DbSet<manager> managers { get; set; }
     }
 }

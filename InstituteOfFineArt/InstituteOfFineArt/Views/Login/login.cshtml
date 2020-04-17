@@ -1,4 +1,5 @@
-﻿
+﻿@model InstituteOfFineArt.Models.staff
+
 @{
     ViewBag.Title = "login";
 }
@@ -38,15 +39,25 @@
                                     <div class="head">
                                         <h1 class="head-manager animated fadeInRight" id="head-log"><b>Manager</b></h1>
                                         <div class="into-manager"><button id="btn-man" href="#" class="btn-manager animated fadeInRight" onclick="mypop()">Click</button></div>
-                                        <div id="form">
-                                            <form class="form-login">
-                                                <div id="cros" onclick="mypop()"><i class="fa fa-close"></i></div>
-                                                <h4 class="text-center" id="man"><b>Manager Login</b></h4>
-                                                <input type="text" id="login-name" class="form-control" />
-                                                <input type="password" id="login-pass" class="form-control" />
-                                                <input type="submit" value="Submit" id="login-btn" class="form-control" />
-                                            </form>
-                                        </div>
+                                        @using (Html.BeginForm("login", "Login", FormMethod.Post))
+                                        {
+                                            <table class="form-login">
+
+                                                <tr>  <div id="cros" onclick="mypop()"><i class="fa fa-close"></i></div></tr>
+                                                <tr><h4 class="text-center" id="man"><b>Admin Login</b></h4></tr>
+                                                <tr>
+                                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "login-name" })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                </tr>
+
+                                                <tr>
+                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "login-pass" } })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                </tr>
+                                                <tr><input type="submit" id="login-btn" class="form-control" /></tr>
+
+                                            </table>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -64,13 +75,25 @@
                                         <div class="into-admin"><button class="btn-admin animated fadeInRight" id="btn-man2" onclick="mypop2()">Click</button></div>
                                     </div>
                                     <div id="form2">
-                                        <form class="form-login">
-                                            <div id="cros2" onclick="mypop2()"><i class="fa fa-close"></i></div>
-                                            <h4 class="text-center" id="man2"><b>Admin Login</b></h4>
-                                            <input type="text" id="login-name2" class="form-control" />
-                                            <input type="password" id="login-pass2" class="form-control" />
-                                            <input type="submit" value="Submit" id="login-btn2" class="form-control" />
-                                        </form>
+                                        @using (Html.BeginForm("login", "Login", FormMethod.Post))
+                                        {
+                                            <table class="form-login">
+
+                                                <tr>  <div id="cros2" onclick="mypop2()"><i class="fa fa-close"></i></div></tr>
+                                                <tr><h4 class="text-center" id="man2"><b>Admin Login</b></h4></tr>
+                                                <tr>
+                                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "login-name2" })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                </tr>
+
+                                                <tr>
+                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "login-pass2" } })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                </tr>
+                                                <tr><input type="submit" id="login-btn2" class="form-control" /></tr>
+
+                                            </table>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -88,13 +111,25 @@
                                         <div class="into-admin"><button class="btn-admin animated fadeInRight" id="btn-man3" onclick="mypop3()">Click</button></div>
                                     </div>
                                     <div id="form3">
-                                        <form class="form-login">
-                                            <div id="cros3" onclick="mypop3()"><i class="fa fa-close"></i></div>
-                                            <h4 class="text-center" id="man3"><b>Student Login</b></h4>
-                                            <input type="text" id="login-name3" class="form-control" />
-                                            <input type="password" id="login-pass3" class="form-control" />
-                                            <input type="submit" value="Submit" id="login-btn3" class="form-control" />
-                                        </form>
+                                        @using (Html.BeginForm("login", "Login", FormMethod.Post))
+                                        {
+                                            <table class="form-login">
+
+                                                <tr>  <div id="cros3" onclick="mypop3()"><i class="fa fa-close"></i></div></tr>
+                                                <tr><h4 class="text-center" id="man3"><b>Admin Login</b></h4></tr>
+                                                <tr>
+                                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "login-name3" })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                </tr>
+
+                                                <tr>
+                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "login-pass3" } })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                </tr>
+                                                <tr><input type="submit" id="login-btn3" class="form-control" /></tr>
+
+                                            </table>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -111,14 +146,29 @@
                                         <h1 class="head-admin animated fadeInRight" id="head-log4"><b>Staff</b></h1>
                                         <div class="into-admin"><button class="btn-admin animated fadeInRight" id="btn-man4" onclick="mypop4()">Click</button></div>
                                     </div>
-                                    <div id="form4" id="f4">
-                                        <form class="form-login">
-                                            <div id="cros4" onclick="mypop4()"><i class="fa fa-close"></i></div>
-                                            <h4 class="text-center" id="man4"><b>Staff Login</b></h4>
-                                            <input type="text" id="login-name4" class="form-control" />
-                                            <input type="password" id="login-pass4" class="form-control" />
-                                            <input type="submit" value="Submit" id="login-btn4" class="form-control" />
-                                        </form>
+                                    <div id="form4">
+                                        @ViewBag.ErrorMessage
+                                        @using (Html.BeginForm("login", "Login", FormMethod.Post))
+                                        {
+                                            <table class="form-login">
+
+                                                <tr><div id="cros4" onclick="mypop4()"><i class="fa fa-close"></i></div></tr>
+                                                <tr><h4 class="text-center" id="man4"><b>Staff Login</b></h4></tr>
+                                                <tr>
+
+                                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "login-name4" })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                </tr>
+
+                                                <tr>
+                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "login-pass4" } })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                    @*@ViewBag.ErrorMessage*@
+                                                </tr>
+                                                <tr><input type="submit" id="login-btn4" class="form-control" /></tr>
+
+                                            </table>
+                                        }
                                     </div>
                                 </div>
                             </div>
