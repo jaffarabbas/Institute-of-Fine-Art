@@ -42,6 +42,20 @@ namespace InstituteOfFineArt.Controllers
         [HttpPost]
         public ActionResult admin_s(student a)
         {
+            if (ModelState.IsValid == true)
+            {
+                obj.students.Add(a);
+                int taker = obj.SaveChanges();
+                if (taker > 0)
+                {
+                    ViewBag.InsertMessage = "<script>alert('Regestred Succesfuly')</script>";
+                    ModelState.Clear();
+                }
+                else
+                {
+                    ViewBag.InsertMessage = "<script>alert('Error in Regestration')</script>";
+                }
+            }
             return View();
         }
     }

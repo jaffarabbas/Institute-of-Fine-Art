@@ -298,6 +298,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FineLogin.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\manager.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\staff.cs">
       <DependentUpon>FineLogin.tt</DependentUpon>
     </Compile>
