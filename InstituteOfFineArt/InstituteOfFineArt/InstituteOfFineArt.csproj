@@ -350,12 +350,20 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Admin\admin.cshtml" />
-    <Content Include="Views\Admin\admin_s.cshtml" />
     <Content Include="Views\Student\student_panel.cshtml" />
     <Content Include="Views\Staff\Staff_pannel.cshtml" />
     <Content Include="Views\Manager\manager.cshtml" />
     <Content Include="Views\Admin\Staff_view.cshtml" />
     <Content Include="Views\Admin\StaffSerch.cshtml" />
+    <Content Include="Views\Admin\Staff_Details.cshtml" />
+    <Content Include="Views\Admin\Staff_Delete.cshtml" />
+    <Content Include="Views\Admin\Staff_Edit.cshtml" />
+    <Content Include="Views\Admin\AdminStudent.cshtml" />
+    <Content Include="Views\Admin\Student_view.cshtml" />
+    <Content Include="Views\Admin\Student_Delete.cshtml" />
+    <Content Include="Views\Admin\Student_Details.cshtml" />
+    <Content Include="Views\Admin\StudentSerch.cshtml" />
+    <Content Include="Views\Admin\Student_Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

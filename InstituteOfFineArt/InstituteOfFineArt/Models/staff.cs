@@ -17,10 +17,10 @@ namespace InstituteOfFineArt.Models
     public partial class staff
     {
         public int Id { get; set; }
-        [Required(ErrorMessage ="Required")]
+        [Required(ErrorMessage = "Required")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Required")]
-        [RegularExpression(@"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$", ErrorMessage ="Invalid Format")]
+        [RegularExpression(@"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$", ErrorMessage = "Invalid Format")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Required")]
         public int Number { get; set; }
@@ -38,7 +38,7 @@ namespace InstituteOfFineArt.Models
         [Required(ErrorMessage = "Required")]
         [DisplayName("Confirm Password")]
         [DataType(DataType.Password)]
-        [Compare("Password",ErrorMessage ="Invalid Password")]
+        [Compare("Password", ErrorMessage = "Invalid Password")]
         public string Co_Password { get; set; }
     }
 }

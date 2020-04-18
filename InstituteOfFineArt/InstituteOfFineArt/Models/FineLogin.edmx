@@ -44,7 +44,6 @@
           <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="age" Type="int" Nullable="false" />
-          <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="Class" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Subject" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
@@ -63,9 +62,9 @@
       <Schema Namespace="FINE_ARTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="FINE_ARTSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="staffs" EntityType="FINE_ARTSModel.staff" />
-          <EntitySet Name="students" EntityType="FINE_ARTSModel.student" />
           <EntitySet Name="admines" EntityType="FINE_ARTSModel.admine" />
           <EntitySet Name="managers" EntityType="FINE_ARTSModel.manager" />
+          <EntitySet Name="students" EntityType="FINE_ARTSModel.student" />
         </EntityContainer>
         <EntityType Name="staff">
           <Key>
@@ -82,21 +81,6 @@
           <Property Name="Co_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="student">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="age" Type="Int32" Nullable="false" />
-          <Property Name="Number" Type="Int32" Nullable="false" />
-          <Property Name="Class" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Subject" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Co_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="admine">
           <Key>
             <PropertyRef Name="Id" />
@@ -112,6 +96,20 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Co_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -135,22 +133,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="students">
-            <EntityTypeMapping TypeName="FINE_ARTSModel.student">
-              <MappingFragment StoreEntitySet="student">
-                <ScalarProperty Name="Co_Password" ColumnName="Co-Password" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
-                <ScalarProperty Name="age" ColumnName="age" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="admines">
             <EntityTypeMapping TypeName="FINE_ARTSModel.admine">
               <MappingFragment StoreEntitySet="admine">
@@ -164,6 +146,21 @@
             <EntityTypeMapping TypeName="FINE_ARTSModel.manager">
               <MappingFragment StoreEntitySet="managers">
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="FINE_ARTSModel.student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="Co_Password" ColumnName="Co-Password" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

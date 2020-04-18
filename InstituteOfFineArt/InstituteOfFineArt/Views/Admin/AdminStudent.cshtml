@@ -1,8 +1,10 @@
 ﻿@model InstituteOfFineArt.Models.student
 
 @{
-    ViewBag.Title = "admin_s";
+    ViewBag.Title = "AdminStudent";
 }
+
+
 
 @Html.Raw(ViewBag.InsertMessage)
 
@@ -44,10 +46,10 @@
                                 <a href="@Url.Action("admin","Admin")" onclick="mypop()">Insert Staff</a>
                             </li>
                             <li>
-                                <a href="#">View Staff</a>
+                                <a href="@Url.Action("Staff_view","Admin")">View Staff</a>
                             </li>
                             <li>
-                                <a href="#">Search Staff</a>
+                                <a href="@Url.Action("Staff_Serch","Admin")">Search Staff</a>
                             </li>
                         </ul>
                     </li>
@@ -56,13 +58,13 @@
                         <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Students<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("AdminStudent","Admin")" onclick="mypop2()">Insert Students</a>
                             </li>
                             <li>
-                                <a href="#">View Students</a>
+                                <a href="@Url.Action("Student_view","Admin")">View Students</a>
                             </li>
                             <li>
-                                <a href="#">Search Studnets</a>
+                                <a href="@Url.Action("StudentSerch","Admin")">Search Studnets</a>
                             </li>
                         </ul>
                     </li>
@@ -82,7 +84,7 @@
                     <div class="col-md-12">
                         <h2>Admin Dashboard</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
-                      
+
                         <div class="Insert_Student" id="Student_insert">
                             <section class="sec_stu__insert">
                                 @using (Html.BeginForm())
@@ -115,14 +117,6 @@
                                                 <div class="col-md-10">
                                                     @Html.EditorFor(model => model.age, new { htmlAttributes = new { @class = "form-control" } })
                                                     @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
 
@@ -189,5 +183,7 @@
 <script src="~/Temp/assets2/js/custom.js"></script>
 <script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
 <script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
+
+
 
 

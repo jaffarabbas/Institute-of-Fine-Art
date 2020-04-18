@@ -41,7 +41,7 @@
                         <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>Staff<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#" onclick="mypop()">Insert Staff</a>
+                                <a href="@Url.Action("Staff_view","Admin")" onclick="mypop()">Insert Staff</a>
                             </li>
                             <li>
                                 <a href="@Url.Action("Staff_view","Admin")">View Staff</a>
@@ -56,14 +56,13 @@
                         <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Students<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("admin_s","Admin")" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("AdminStudent","Admin")" onclick="mypop2()">Insert Students</a>
                             </li>
                             <li>
-                                <a href="#">View Students</a>
+                                <a href="@Url.Action("Student_view","Admin")">View Students</a>
                             </li>
                             <li>
-                                <a href="#">Search Studnets</a>
-                            </li>
+                                <a href="@Url.Action("StudentSerch","Admin")">Search Studnets</a>                            </li>
                         </ul>
                     </li>
 
@@ -84,7 +83,7 @@
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
                         <div class="Insert_main" id="staff_inser">
                             <section class="sec_insert">
-
+                             
                                 @using (Html.BeginForm())
                                 {
                                     @Html.AntiForgeryToken()
@@ -147,7 +146,7 @@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })
                                                 <div class="col-md-10">
-                                                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new {@class="form-control"})
+                                                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
