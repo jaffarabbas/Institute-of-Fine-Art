@@ -20,7 +20,7 @@ namespace InstituteOfFineArt.Models
         [Required(ErrorMessage ="Required")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Required")]
-        [RegularExpression(@"^[a-zA – Z0 – 9. _%+-]+@[a-zA – Z0-9 . _%+-]+\.[a-zA-Z]{2,4}$",ErrorMessage ="Invalid Format")]
+        [RegularExpression(@"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$", ErrorMessage ="Invalid Format")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Required")]
         public int Number { get; set; }
@@ -33,7 +33,7 @@ namespace InstituteOfFineArt.Models
         [Required(ErrorMessage = "Required")]
         public string Subject { get; set; }
         [Required(ErrorMessage = "Required")]
-        [RegularExpression(@"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",ErrorMessage ="Invalid Format")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required(ErrorMessage = "Required")]
         [DisplayName("Confirm Password")]

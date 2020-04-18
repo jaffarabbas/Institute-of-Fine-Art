@@ -23,7 +23,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">ADMIN</a>
             </div>
-            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="@Url.Action("Logout","Admin")" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -44,10 +44,10 @@
                                 <a href="#" onclick="mypop()">Insert Staff</a>
                             </li>
                             <li>
-                                <a href="#">View Staff</a>
+                                <a href="@Url.Action("Staff_view","Admin")">View Staff</a>
                             </li>
                             <li>
-                                <a href="#">Search Staff</a>
+                                <a href="@Url.Action("StaffSerch","Admin")">Search Staff</a>
                             </li>
                         </ul>
                     </li>

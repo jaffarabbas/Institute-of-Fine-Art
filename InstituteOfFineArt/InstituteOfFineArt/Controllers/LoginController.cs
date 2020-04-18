@@ -21,7 +21,7 @@ namespace InstituteOfFineArt.Controllers
 
             var data = obj.staffs.Where(model => model.Name == a.Name && model.Password == a.Password).FirstOrDefault();
 
-            var data2 = obj.admines.Where(model => b.Name == b.Name && model.Password == b.Password).FirstOrDefault();
+            var data2 = obj.admines.Where(model => b.Nmae == b.Nmae && model.Password == b.Password).FirstOrDefault();
             if (data != null)
             {
                 Session["userId"] = a.Id.ToString();
@@ -32,7 +32,8 @@ namespace InstituteOfFineArt.Controllers
            
             else if (data2 != null)
             {
-              
+                Session["adminId"] = a.Id.ToString();
+                Session["adminname"] = a.Name.ToString();
                 TempData["LoginSuccess"] = "<script>alert('Login Succesfuly')</script>";
                 return RedirectToAction("admin", "Admin");
             }

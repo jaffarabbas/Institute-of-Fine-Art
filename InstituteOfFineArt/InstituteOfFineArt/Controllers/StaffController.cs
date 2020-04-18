@@ -12,7 +12,16 @@ namespace InstituteOfFineArt.Controllers
         // GET: Staff
         public ActionResult Staff_pannel()
         {
+            if (Session["userId"] == null)
+            {
+                return RedirectToAction("login", "Login");
+            }
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("login", "Login");
         }
     }
 }

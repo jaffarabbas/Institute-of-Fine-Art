@@ -1,4 +1,6 @@
-﻿@model InstituteOfFineArt.Models.staff
+﻿
+@model InstituteOfFineArt.Models.staff
+@*@model IEnumerable<InstituteOfFineArt.Models.staff>*@
 
 @{
     ViewBag.Title = "login";
@@ -45,7 +47,7 @@
                                                 <table class="form-login">
 
                                                     <tr>  <div id="cros" onclick="mypop()"><i class="fa fa-close"></i></div></tr>
-                                                    <tr><h4 class="text-center" id="man"><b>Admin Login</b></h4></tr>
+                                                    <tr><h4 class="text-center" id="man"><b>Manager Login</b></h4></tr>
                                                     <tr>
                                                         @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "login-name" })
                                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })

@@ -17,7 +17,7 @@ namespace InstituteOfFineArt.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Required")]
-        public string Name { get; set; }
+        public string Nmae { get; set; }
         [Required(ErrorMessage = "Required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }

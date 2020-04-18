@@ -21,7 +21,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">@Session["Username"]</a>
             </div>
-            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Username"] &nbsp;<a href="@Url.Action("Logout","Staff")" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -90,7 +90,7 @@
             </div>
         </div>
         <!-- /. ROW  -->
-    </div>
+    </div> 
 </body>
 
 
