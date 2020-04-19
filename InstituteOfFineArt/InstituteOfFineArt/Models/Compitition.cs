@@ -13,33 +13,33 @@ namespace InstituteOfFineArt.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
 
-    public partial class staff
+    public partial class Compitition
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Required")]
+
         public string Name { get; set; }
         [Required(ErrorMessage = "Required")]
-        [RegularExpression(@"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$", ErrorMessage = "Invalid Format")]
-        public string Email { get; set; }
+        public string Type { get; set; }
         [Required(ErrorMessage = "Required")]
-        public int Number { get; set; }
+        public string despcription { get; set; }
+        [Required(ErrorMessage = "Enter the issued date.")]
+        [DataType(DataType.Date)]
+        [DisplayName("Issue Date")]
+        public System.DateTime StartDate { get; set; }
+        [Required(ErrorMessage = "Enter the End date.")]
+        [DataType(DataType.Date)]
+        [DisplayName("End Date")]
+        public System.DateTime EndDate { get; set; }
         [Required(ErrorMessage = "Required")]
-        public string gender { get; set; }
+        public string Conditions { get; set; }
         [Required(ErrorMessage = "Required")]
-        public string Qualification { get; set; }
+        public string AwardDetils { get; set; }
         [Required(ErrorMessage = "Required")]
-        public string Class { get; set; }
-        [Required(ErrorMessage = "Required")]
-        public string Subject { get; set; }
-        [Required(ErrorMessage = "Required")]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-        [Required(ErrorMessage = "Required")]
-        [DisplayName("Confirm Password")]
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Invalid Password")]
-        public string Co_Password { get; set; }
-       
+        [DisplayName("Insert Image")]
+        public string Image { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

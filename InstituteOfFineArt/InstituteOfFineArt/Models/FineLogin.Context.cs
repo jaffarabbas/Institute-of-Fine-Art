@@ -29,5 +29,6 @@ namespace InstituteOfFineArt.Models
         public virtual DbSet<admine> admines { get; set; }
         public virtual DbSet<manager> managers { get; set; }
         public virtual DbSet<student> students { get; set; }
+        public virtual DbSet<Compitition> Compititions { get; set; }
     }
 }

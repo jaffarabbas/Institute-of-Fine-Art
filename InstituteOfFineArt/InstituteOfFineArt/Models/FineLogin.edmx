@@ -13,6 +13,20 @@
           <Property Name="Nmae" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Compititions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="despcription" Type="varchar(max)" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="Conditions" Type="varchar(max)" Nullable="false" />
+          <Property Name="AwardDetils" Type="varchar(max)" Nullable="false" />
+          <Property Name="Image" Type="varchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="managers">
           <Key>
             <PropertyRef Name="Id" />
@@ -52,6 +66,7 @@
         </EntityType>
         <EntityContainer Name="FINE_ARTSModelStoreContainer">
           <EntitySet Name="admine" EntityType="Self.admine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compititions" EntityType="Self.Compititions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="managers" EntityType="Self.managers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
@@ -65,6 +80,7 @@
           <EntitySet Name="admines" EntityType="FINE_ARTSModel.admine" />
           <EntitySet Name="managers" EntityType="FINE_ARTSModel.manager" />
           <EntitySet Name="students" EntityType="FINE_ARTSModel.student" />
+          <EntitySet Name="Compititions" EntityType="FINE_ARTSModel.Compitition" />
         </EntityContainer>
         <EntityType Name="staff">
           <Key>
@@ -110,6 +126,20 @@
           <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Co_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Compitition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="despcription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Conditions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AwardDetils" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -161,6 +191,21 @@
                 <ScalarProperty Name="Class" ColumnName="Class" />
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compititions">
+            <EntityTypeMapping TypeName="FINE_ARTSModel.Compitition">
+              <MappingFragment StoreEntitySet="Compititions">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AwardDetils" ColumnName="AwardDetils" />
+                <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="despcription" ColumnName="despcription" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

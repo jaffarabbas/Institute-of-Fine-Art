@@ -283,6 +283,9 @@
     <Compile Include="Models\admine.cs">
       <DependentUpon>FineLogin.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Compitition.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\FineLogin.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -364,6 +367,8 @@
     <Content Include="Views\Admin\Student_Details.cshtml" />
     <Content Include="Views\Admin\StudentSerch.cshtml" />
     <Content Include="Views\Admin\Student_Edit.cshtml" />
+    <Content Include="Views\Staff\Compitition.cshtml" />
+    <Content Include="Views\Staff\Create_Compitition.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -371,7 +376,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
