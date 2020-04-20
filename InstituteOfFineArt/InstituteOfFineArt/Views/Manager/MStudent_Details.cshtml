@@ -1,7 +1,9 @@
-﻿
+﻿@model InstituteOfFineArt.Models.student
+
 @{
-    ViewBag.Title = "manager";
+    ViewBag.Title = "MStudent_Details";
 }
+
 
 @Html.Raw(TempData["LoginSuccess"])
 
@@ -43,10 +45,10 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                         <a href="ui.html"><i class="fa fa-users fa-3x"></i>Students</a>
                         <ul class="nav nav-third-level">
                             <li>
-                                 <a href="@Url.Action("MStudent_view")">View List</a>
+                                <a href="@Url.Action("MStudent_view")">View List</a>
                             </li>
                             <li>
-                                 <a href="@Url.Action("MStudentSerch")">Serarch List</a>
+                                <a href="@Url.Action("MStudentSerch")">Serarch List</a>
                             </li>
                         </ul>
                     </li>
@@ -54,10 +56,10 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                         <a href="tab-panel.html"><i class="fa fa-user fa-3x"></i>Staffs</a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="@Url.Action("MStaff_view")">View List</a>
+                                <a href="#">View List</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("MstaffSerch")">Serarch List</a>
+                                <a href="#">Serarch List</a>
                             </li>
                         </ul>
 
@@ -115,13 +117,89 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                     <div class="col-md-12">
                         <h2>Admin Dashboard</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
-                    </div>
+
+
+                        <div>
+                            <h4>student</h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Name)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.age)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.age)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Class)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Class)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Subject)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Subject)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.gender)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.gender)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Password)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Password)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Co_Password)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Co_Password)
+                                </dd>
+
+                            </dl>
+                        </div>
+                    <p style="margin-left:30px">
+                      
+                        @Html.ActionLink("     Back to List", "Mstudent_view")
+                    </p>
+                </div>
                 </div>
             </div>
         </div>
-                <!-- /. ROW  -->
+        <!-- /. ROW  -->
 
-        </div>
+    </div>
 
 </body>
 
@@ -130,6 +208,7 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
 <script src="~/Temp/assets2/js/custom.js"></script>
 <script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
 <script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
+
 
 
 

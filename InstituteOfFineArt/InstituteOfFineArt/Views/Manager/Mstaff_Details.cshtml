@@ -1,9 +1,10 @@
-﻿
+﻿@model InstituteOfFineArt.Models.staff
+
 @{
-    ViewBag.Title = "manager";
+    ViewBag.Title = "Mstaff_Details";
 }
 
-@Html.Raw(TempData["LoginSuccess"])
+
 
 <link href="~/Temp/assets2/css/css.css" rel="stylesheet" />
 <link href="~/Temp/assets2/css/bootstrap.css" rel="stylesheet" />
@@ -43,10 +44,10 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                         <a href="ui.html"><i class="fa fa-users fa-3x"></i>Students</a>
                         <ul class="nav nav-third-level">
                             <li>
-                                 <a href="@Url.Action("MStudent_view")">View List</a>
+                                <a href="@Url.Action("MStudent_view")">View List</a>
                             </li>
                             <li>
-                                 <a href="@Url.Action("MStudentSerch")">Serarch List</a>
+                                <a href="@Url.Action("MStudentSerch")">Serarch List</a>
                             </li>
                         </ul>
                     </li>
@@ -57,7 +58,7 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                                 <a href="@Url.Action("MStaff_view")">View List</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("MstaffSerch")">Serarch List</a>
+                                <a href="#">Serarch List</a>
                             </li>
                         </ul>
 
@@ -113,15 +114,100 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Admin Dashboard</h2>
-                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+
+   
+                            <div>
+                                <h4>staff</h4>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Name)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Email)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Number)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Number)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Qualification)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Qualification)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Class)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Class)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Subject)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Subject)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Password)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Password)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.Co_Password)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Co_Password)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.gender)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.gender)
+                                    </dd>
+
+                                </dl>
+                            </div>
+                           
+                        <p>
+
+                            @Html.ActionLink("Back to List", "Mstaff_view")
+                        </p>
+
+
                     </div>
                 </div>
             </div>
         </div>
-                <!-- /. ROW  -->
+        <!-- /. ROW  -->
 
-        </div>
+    </div>
 
 </body>
 
@@ -130,9 +216,6 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
 <script src="~/Temp/assets2/js/custom.js"></script>
 <script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
 <script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
-
-
-
 
 
 

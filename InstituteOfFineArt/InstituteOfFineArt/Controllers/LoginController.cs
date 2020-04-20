@@ -16,12 +16,17 @@ namespace InstituteOfFineArt.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult login(staff a, admine b)
+        public ActionResult login(staff a, admine b,manager c,student d)
         {
 
             var data = obj.staffs.Where(model => model.Name == a.Name && model.Password == a.Password).FirstOrDefault();
 
             var data2 = obj.admines.Where(model => b.Nmae == b.Nmae && model.Password == b.Password).FirstOrDefault();
+
+            var data3 = obj.managers.Where(model => c.Name == c.Name && model.Password == c.Password).FirstOrDefault();
+
+            var data4 = obj.students.Where(model => d.Name == d.Name && model.Password == d.Password).FirstOrDefault();
+
             if (data != null)
             {
                 Session["userId"] = a.Id.ToString();
@@ -36,6 +41,20 @@ namespace InstituteOfFineArt.Controllers
                 Session["adminname"] = a.Name.ToString();
                 TempData["LoginSuccess"] = "<script>alert('Login Succesfuly')</script>";
                 return RedirectToAction("admin", "Admin");
+            }
+            else if (data3 != null)
+            {
+                Session["managerId"] = c.Id.ToString();
+                Session["managername"] = c.Name.ToString();
+                TempData["LoginSuccess"] = "<script>alert('Login Succesfuly')</script>";
+                return RedirectToAction("manager", "Manager");
+            }
+            else if (data4 != null)
+            {
+                Session["studentId"] = a.Id.ToString();
+                Session["studentname"] = a.Name.ToString();
+                TempData["LoginSuccess"] = "<script>alert('Login Succesfuly')</script>";
+                return RedirectToAction("student_panel", "Student");
             }
             else
             {

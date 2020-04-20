@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstituteOfFineArt.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace InstituteOfFineArt.Controllers
 {
     public class HomeController : Controller
     {
+        FINE_ARTSEntities obj = new FINE_ARTSEntities();
         // GET: Home
         public ActionResult Index()
         {
