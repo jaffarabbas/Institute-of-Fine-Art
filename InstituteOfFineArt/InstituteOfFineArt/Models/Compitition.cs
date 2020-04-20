@@ -40,6 +40,6 @@ namespace InstituteOfFineArt.Models
         [DisplayName("Insert Image")]
         public string Image { get; set; }
 
-        public HttpPostedFileBase ImageFile { get; set; }
+        //public HttpPostedFileBase ImageFile { get; set; }
     }
 }

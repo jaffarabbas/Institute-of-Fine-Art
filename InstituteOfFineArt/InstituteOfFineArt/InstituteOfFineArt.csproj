@@ -369,6 +369,7 @@
     <Content Include="Views\Admin\Student_Edit.cshtml" />
     <Content Include="Views\Staff\Compitition.cshtml" />
     <Content Include="Views\Staff\Create_Compitition.cshtml" />
+    <Content Include="Views\Staff\Student_Staff_view_Admission.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

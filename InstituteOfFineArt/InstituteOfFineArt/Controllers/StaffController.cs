@@ -21,6 +21,12 @@ namespace InstituteOfFineArt.Controllers
             return View();
         }
 
+        public ActionResult Student_Staff_view_Admission()
+        {
+            var data = obj.Compititions.ToList();
+            return View(data);
+        }
+
         public ActionResult Compitition()
         {
             var data = obj.Compititions.ToList();
@@ -34,13 +40,13 @@ namespace InstituteOfFineArt.Controllers
 
         [HttpPost]
 
-        public ActionResult Create_Compitition(Compitition a)
+        public ActionResult Create_Compitition(Compitition a, HttpPostedFileBase ImageFile)
         {
             if (ModelState.IsValid == true)
             {
-                string filename = Path.GetFileNameWithoutExtension(a.ImageFile.FileName);
-                string extension = Path.GetExtension(a.ImageFile.FileName);
-                HttpPostedFileBase postedFile = a.ImageFile;
+                string filename = Path.GetFileNameWithoutExtension(ImageFile.FileName);
+                string extension = Path.GetExtension(ImageFile.FileName);
+                HttpPostedFileBase postedFile = ImageFile;
                 int length = postedFile.ContentLength;
 
                 if (extension.ToLower()  == ".jpg" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png")
@@ -50,9 +56,9 @@ namespace InstituteOfFineArt.Controllers
                         filename = filename + extension;
                         a.Image = "~/Images/"+filename;
                         filename = Path.Combine(Server.MapPath("~/Images/"), filename);
-                        a.ImageFile.SaveAs(filename);
+                        ImageFile.SaveAs(filename);
                         obj.Compititions.Add(a);
-
+                        
                         int data = obj.SaveChanges();
 
                         if(data > 0)

@@ -187,6 +187,10 @@ p {
 }
 
 
+.view_student {
+    padding-top: 50px;
+}
+
 /*CHAT PANEL*/
 
 .chat-panel .panel-body {
