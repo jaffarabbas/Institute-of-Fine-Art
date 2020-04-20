@@ -20,10 +20,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-     
-                <a class="navbar-brand" href="index.html">@Session["Username"]</a>
+                <a class="navbar-brand" href="index.html">Manager Portal</a>
             </div>
-            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Username"] &nbsp;<a href="@Url.Action("Logout","Admin")" class="btn btn-danger square-btn-adjust">Logout</a></div>
+            <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -38,33 +40,64 @@
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>Staff<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
+                        <a href="ui.html"><i class="fa fa-users fa-3x"></i>Students</a>
+                        <ul class="nav nav-third-level">
                             <li>
-                                <a href="#" onclick="mypop()">Insert Staff</a>
+                                 <a href="#">View List</a>
                             </li>
                             <li>
-                                <a href="#">View Staff</a>
-                            </li>
-                            <li>
-                                <a href="#">Search Staff</a>
+                                 <a href="#">Serarch List</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-
-                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Students<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
+                        <a href="tab-panel.html"><i class="fa fa-user fa-3x"></i>Staffs</a>
+                        <ul class="nav nav-third-level">
                             <li>
-                                <a href="@Url.Action("admin_s","Admin")" onclick="mypop2()">Insert Students</a>
+                                <a href="#">View List</a>
                             </li>
                             <li>
-                                <a href="#">View Students</a>
-                            </li>
-                            <li>
-                                <a href="#">Search Studnets</a>
+                                <a href="#">Serarch List</a>
                             </li>
                         </ul>
+
+                    </li>
+                    <li>
+                        <a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i>Compititions</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="#">View List</a>
+                            </li>
+                            <li>
+                                <a href="#">Serarch List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="table.html"><i class="fa fa-table fa-3x"></i>Awards</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="#">View List</a>
+                            </li>
+                            <li>
+                                <a href="#">Serarch List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="form.html"><i class="fa fa-edit fa-3x"></i>Compititions Details</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="#">View List</a>
+                            </li>
+                            <li>
+                                <a href="#">Serarch List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i>Exibition</a>
+
                     </li>
 
                     <li>
@@ -82,15 +115,14 @@
                     <div class="col-md-12">
                         <h2>Admin Dashboard</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
-                        <div class="Insert_main" id="staff_inser">
-                            <section class="sec_insert"></section>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /. ROW  -->
-    </div>
+                <!-- /. ROW  -->
+
+        </div>
+
 </body>
 
 
