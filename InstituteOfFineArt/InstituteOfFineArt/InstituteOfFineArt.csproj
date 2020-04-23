@@ -376,6 +376,8 @@
     <Content Include="Views\Manager\Mstaff_view.cshtml" />
     <Content Include="Views\Manager\MstaffSerch.cshtml" />
     <Content Include="Views\Manager\Mstaff_Details.cshtml" />
+    <Content Include="Views\Staff\EditCompitition.cshtml" />
+    <Content Include="Views\Staff\Compitition_Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

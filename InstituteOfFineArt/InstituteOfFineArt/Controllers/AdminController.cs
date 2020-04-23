@@ -75,23 +75,6 @@ namespace InstituteOfFineArt.Controllers
             return View(view);
         }
 
-        public ActionResult Staff_Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            staff staffs = obj.staffs.Find(id);
-
-
-            if (staffs == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(staffs);
-        }
         
         public ActionResult StaffSerch(string serchby,string search)
         {

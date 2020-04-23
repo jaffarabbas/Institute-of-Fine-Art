@@ -51,10 +51,10 @@
                         <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Compitition Details<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Create New</a>
                             </li>
                             <li>
-                                <a href="#">View Students</a>
+                                <a href="@Url.Action("Compitition","Staff")">View Created</a>
                             </li>
                             <li>
                                 <a href="#">Search Studnets</a>
@@ -80,7 +80,7 @@
                         <div class="Insert_main" id="staff_inser">
                             <section class="sec_insert">
                                 <div class="view_student" @*style="padding-top:30px"*@>
-                                    <div class="container-fluid">
+                                    @*@*<div class="container-fluid">
                                         <div class="row">
                                             <div class="col-md-4">
 
@@ -117,7 +117,7 @@
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </section>
                         </div>

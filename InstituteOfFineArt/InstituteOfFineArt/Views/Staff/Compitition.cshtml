@@ -5,6 +5,7 @@
 }
 
 @Html.Raw(TempData["datamessage"])
+@Html.Raw(TempData["upmessage"])
 
 <link href="~/Temp/assets2/css/css.css" rel="stylesheet" />
 <link href="~/Temp/assets2/css/bootstrap.css" rel="stylesheet" />
@@ -33,36 +34,32 @@
                         <img src="~/Temp/assets/img/find_user.png" class="user-image img-responsive" />
                     </li>
 
-
                     <li>
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>Staff<span class="fa arrow"></span></a>
+                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>View Student<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("Staff_view","Admin")" onclick="mypop()">Insert Staff</a>
+                                <a href="#" onclick="mypop()">Personal Detail</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Staff_view","Admin")">View Staff</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("StaffSerch","Admin")">Search Staff</a>
+                                <a href="#">Admission Detial</a>
                             </li>
                         </ul>
                     </li>
                     <li>
 
-                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Students<span class="fa arrow"></span></a>
+                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Compitition Details<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("AdminStudent","Admin")" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Insert Students</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Student_view","Admin")">View Students</a>
+                                <a href="#">View Students</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("StudentSerch","Admin")">Search Studnets</a>
+                                <a href="#">Search Studnets</a>
                             </li>
                         </ul>
                     </li>
@@ -89,79 +86,80 @@
                                 {
                                     @Html.AntiForgeryToken()
 
-                                <form class="form_inser">
+                                    <form class="form_inser">
 
 
-                                    <p>
-                                        @Html.ActionLink("Create New", "Create")
-                                    </p>
-                                    <table class="table">
-                                        <tr>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Name)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Type)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.despcription)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.StartDate)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.EndDate)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Conditions)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.AwardDetils)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Image)
-                                            </th>
-                                            <th></th>
-                                        </tr>
-
-                                        @foreach (var item in Model)
-                                        {
+                                        <p>
+                                            @Html.ActionLink("Create New", "Create_Compitition")
+                                        </p>
+                                        <table class="table">
                                             <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Name)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Type)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.despcription)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.StartDate)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.EndDate)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Conditions)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.AwardDetils)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Image)
-                                                </td>
-                                                <td>
-                                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                                </td>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Name)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Type)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.despcription)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.StartDate)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.EndDate)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Conditions)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.AwardDetils)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Image)
+                                                </th>
+                                                <th></th>
                                             </tr>
-                                        }
 
-                                    </table>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Type)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.despcription)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.StartDate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.EndDate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Conditions)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.AwardDetils)
+                                                    </td>
+                                                    <td>
+                                                        <img src="@Url.Content(item.Image)" height="80px" width="80px" />
+                                                    </td>
+                                                    <td>
+                                                        @Html.ActionLink("Edit", "EditCompitition", new { id = item.Id }) |
+                                                        @Html.ActionLink("Details", "Compitition_Details", new { id = item.Id }) |
+                                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                                    </td>
+                                                </tr>
+                                            }
+                                            </table>
+                                        </form>
+                                    }
 
-</section>
+                            </section>
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,8 @@ namespace InstituteOfFineArt.Models
         [Required(ErrorMessage = "Required")]
         [DisplayName("Insert Image")]
         public string Image { get; set; }
+        //http://localhost:50941/Models/Compitition.cs
 
-        //public HttpPostedFileBase ImageFile { get; set; }
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

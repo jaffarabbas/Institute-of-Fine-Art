@@ -39,36 +39,32 @@
                         <img src="~/Temp/assets/img/find_user.png" class="user-image img-responsive" />
                     </li>
 
-
                     <li>
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>Staff<span class="fa arrow"></span></a>
+                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>View Student<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("Staff_view","Admin")" onclick="mypop()">Insert Staff</a>
+                                <a href="#" onclick="mypop()">Personal Detail</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Staff_view","Admin")">View Staff</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("StaffSerch","Admin")">Search Staff</a>
+                                <a href="#">Admission Detial</a>
                             </li>
                         </ul>
                     </li>
                     <li>
 
-                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Students<span class="fa arrow"></span></a>
+                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Compitition Details<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@*@Url.Action(" AdminStudent","Admin")*@" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Create New</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("Student_view","Admin")">View Students</a>
+                                <a href="@Url.Action("Compitition","Staff")">View Created</a>
                             </li>
                             <li>
-                                <a href="@Url.Action("StudentSerch","Admin")">Search Studnets</a>
+                                <a href="#">Search Studnets</a>
                             </li>
                         </ul>
                     </li>
@@ -89,9 +85,11 @@
                         <h2>Admin Dashboard</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
                         <div class="Insert_main" id="staff_inser">
+                            @Html.Raw(TempData["datamessage"])
+                            @Html.Raw(TempData["dtemessage"])
+                            @Html.Raw(TempData["lengthmessage"])
 
-
-                            @using (Html.BeginForm())
+                            @using (Html.BeginForm("Create_Compitition","Staff",FormMethod.Post,new { enctype="multipart/form-data"}))
                             {
                                 @Html.AntiForgeryToken()
 
@@ -158,7 +156,7 @@
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
-                                          <input type="file" name="ImageFile" />
+                                          <input type="file" name="ImageFile" required />
                                         </div>
                                     </div>
 

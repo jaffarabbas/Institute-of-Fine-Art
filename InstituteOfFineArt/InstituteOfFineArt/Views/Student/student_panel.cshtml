@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">@Session["Username"]</a>
+                <a class="navbar-brand" href="index.html">@Session["studentname"]</a>
             </div>
             <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
@@ -79,10 +79,20 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Admin Dashboard</h2>
-                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                        <h2>Student Dashboard</h2>
+                        <h5>Welcome @Session["studentname"] , Love to see you back. </h5>
                         <div class="Insert_main" id="staff_inser">
-                            <section class="sec_insert"></section>
+                            <section class="sec_insert">
+                                <div class="view_comp">
+                                    <div class="card text-white mb-3" style="max-width: 18rem; border:1px solid #808080; float:right;padding:10px 12px">
+                                        <div class="card-header">Compitition</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Check it</h5>
+                                            <input type="submit" value="Check it" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>

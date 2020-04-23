@@ -51,8 +51,8 @@ namespace InstituteOfFineArt.Controllers
             }
             else if (data4 != null)
             {
-                Session["studentId"] = a.Id.ToString();
-                Session["studentname"] = a.Name.ToString();
+                Session["studentId"] = d.Id.ToString();
+                Session["studentname"] = d.Name.ToString();
                 TempData["LoginSuccess"] = "<script>alert('Login Succesfuly')</script>";
                 return RedirectToAction("student_panel", "Student");
             }

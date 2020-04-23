@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using InstituteOfFineArt.Models;
 
@@ -11,6 +13,9 @@ namespace InstituteOfFineArt.Controllers
     public class StaffController : Controller
     {
         FINE_ARTSEntities obj = new FINE_ARTSEntities();
+
+        public EntityState EntitiyState { get; private set; }
+
         // GET: Staff
         public ActionResult Staff_pannel()
         {
@@ -40,13 +45,13 @@ namespace InstituteOfFineArt.Controllers
 
         [HttpPost]
 
-        public ActionResult Create_Compitition(Compitition a, HttpPostedFileBase ImageFile)
+        public ActionResult Create_Compitition(Compitition a)
         {
-            if (ModelState.IsValid == true)
-            {
-                string filename = Path.GetFileNameWithoutExtension(ImageFile.FileName);
-                string extension = Path.GetExtension(ImageFile.FileName);
-                HttpPostedFileBase postedFile = ImageFile;
+           
+            
+                string filename = Path.GetFileNameWithoutExtension(a.ImageFile.FileName);
+                string extension = Path.GetExtension(a.ImageFile.FileName);
+                HttpPostedFileBase postedFile = a.ImageFile;
                 int length = postedFile.ContentLength;
 
                 if (extension.ToLower()  == ".jpg" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png")
@@ -56,12 +61,12 @@ namespace InstituteOfFineArt.Controllers
                         filename = filename + extension;
                         a.Image = "~/Images/"+filename;
                         filename = Path.Combine(Server.MapPath("~/Images/"), filename);
-                        ImageFile.SaveAs(filename);
+                        a.ImageFile.SaveAs(filename);
                         obj.Compititions.Add(a);
                         
-                        int data = obj.SaveChanges();
+                        int b = obj.SaveChanges();
 
-                        if(data > 0)
+                        if(b > 0)
                         {
                             TempData["datamessage"] = "<script>alert('Data Inserted Succesfully')</script>";
                             ModelState.Clear();
@@ -69,24 +74,104 @@ namespace InstituteOfFineArt.Controllers
                         }
                         else
                         {
-                            TempData["dtemessage"] = "<script>alert('Data Not Inserted')</script>";
+                                TempData["dtemessage"] = "<script>alert('Data Not Inserted')</script>";
+                            }
+                        }
+                        else
+                        {
+                            TempData["lengthmessage"] = "<script>alert('Length should be 10 mb')</script>";
                         }
                     }
                     else
                     {
-                        TempData["lengthmessage"] = "<script>alert('Length should be 10 mb')</script>";
+                        TempData["extentionmessage"] = "<script>alert('Format not Supported')</script>";
                     }
-                }
-                else
-                {
-                    TempData["extentionmessage"] = "<script>alert('Format not Supported')</script>";
-                }
-            }
+            
+
             return View();
         }
 
 
+        public ActionResult EditCompitition(int id)
+        {
+            var compyrow = obj.Compititions.Where(model => model.Id == id).FirstOrDefault();
+            Session["image"] = compyrow.Image;
+            return View(compyrow);
+        }
+        [HttpPost]
+        public ActionResult EditCompitition(Compitition a)
+        {
+          
+                if(a.ImageFile != null)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(a.ImageFile.FileName);
+                    string extension = Path.GetExtension(a.ImageFile.FileName);
+                    HttpPostedFileBase postedFile = a.ImageFile;
+                    int length = postedFile.ContentLength;
 
+                    if (extension.ToLower() == ".jpg" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png")
+                    {
+                        if (length <= 1000000)
+                        {
+                            filename = filename + extension;
+                            a.Image = "~/Images/" + filename;
+                            filename = Path.Combine(Server.MapPath("~/Images/"), filename);
+                            a.ImageFile.SaveAs(filename);
+                            obj.Entry(a).State = EntityState.Modified;
+
+                            int b = obj.SaveChanges();
+
+                            if (b > 0)
+                            {
+                                TempData["upmessage"] = "<script>alert('Data Updated Succesfully')</script>";
+                                ModelState.Clear();
+                                return RedirectToAction("Create_Compitition", "Staff");
+                            }
+                            else
+                            {
+                                TempData["updtemessage"] = "<script>alert('Data Not Updated')</script>";
+                            }
+                        }
+                        else
+                        {
+                            TempData["lengthmessage"] = "<script>alert('Length should be 10 mb')</script>";
+                        }
+                    }
+                    else
+                    {
+                        TempData["extentionmessage"] = "<script>alert('Format not Supported')</script>";
+                    }
+                }
+            
+            return View();
+        }
+
+        public ActionResult Compitition_Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+           Compitition comp = obj.Compititions.Find(id);
+
+
+            if (comp == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(comp);
+        }
+
+
+
+        //public ActionResult Compitition_view(Compitition a)
+        //{
+        //    var data = obj.Compititions.ToList();
+
+        //    return View(data);
+        //}
 
         public ActionResult Logout()
         {
