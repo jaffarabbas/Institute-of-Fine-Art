@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<InstituteOfFineArt.Models.Compitition>
 
 @{
-    ViewBag.Title = "Compitition";
+    ViewBag.Title = "Compitition_view_for_student";
 }
 
-@Html.Raw(TempData["datamessage"])
-@Html.Raw(TempData["upmessage"])
-@Html.Raw(TempData["Delhmessage"])
- 
+
+@{
+    ViewBag.Title = "Staff_pannel";
+}
+@Html.Raw(TempData["LoginSuccess"])
 
 <link href="~/Temp/assets2/css/css.css" rel="stylesheet" />
 <link href="~/Temp/assets2/css/bootstrap.css" rel="stylesheet" />
@@ -24,9 +25,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">ADMIN</a>
+                <a class="navbar-brand" href="index.html">@Session["Username"]</a>
             </div>
-            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="@Url.Action("Logout","Admin")" class="btn btn-danger square-btn-adjust">Logout</a></div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Username"] &nbsp;<a href="@Url.Action("Logout","Staff")" class="btn btn-danger square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -35,6 +36,7 @@
                     <li class="text-center">
                         <img src="~/Temp/assets/img/find_user.png" class="user-image img-responsive" />
                     </li>
+
 
                     <li>
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
@@ -55,10 +57,10 @@
                         <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Compitition Details<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Insert Students</a>
+                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Create New</a>
                             </li>
                             <li>
-                                <a href="#">View Students</a>
+                                <a href="@Url.Action("Compitition","Staff")">View Created</a>
                             </li>
                             <li>
                                 <a href="#">Search Studnets</a>
@@ -83,84 +85,84 @@
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
                         <div class="Insert_main" id="staff_inser">
                             <section class="sec_insert">
-
-                                @using (Html.BeginForm())
-                                {
-                                    @Html.AntiForgeryToken()
-
-                                    <form class="form_inser">
+                                <div class="view_student" @*style="padding-top:30px"*@>
 
 
-                                        <p>
-                                            @Html.ActionLink("Create New", "Create_Compitition")
-                                        </p>
-                                        <table class="table">
+                                    <div><h1 class="text-center" style="font-size:40px;font-weight:bold">Compitition</h1></div>
+
+                                    <table class="table">
+
+
+                                        @foreach (var item in Model)
+                                        {
                                             <tr>
-                                                <th>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.Name)
                                                 </th>
-                                                <th>
+
+                                                <td style="font-size:20px;">
+                                                    @Html.DisplayFor(modelItem => item.Name)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.Type)
                                                 </th>
-                                                <th>
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Type)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.despcription)
                                                 </th>
-                                                <th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.despcription)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.StartDate)
                                                 </th>
-                                                <th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.StartDate)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.EndDate)
                                                 </th>
-                                                <th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EndDate)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.Conditions)
                                                 </th>
-                                                <th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Conditions)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="font-size:20px;">
                                                     @Html.DisplayNameFor(model => model.AwardDetils)
                                                 </th>
-                                                <th>
-                                                    @Html.DisplayNameFor(model => model.Image)
-                                                </th>
-                                                <th></th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.AwardDetils)
+                                                </td>
                                             </tr>
+                                           <tr>
+                                               <td>
+                                               <input type="submit" id="checkcomp" value="Check it" class="btn btn-warning form-control" />
+                                               </td>
+                                           </tr>
+                                                }
 
-                                            @foreach (var item in Model)
-                                            {
-                                                <tr>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Name)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Type)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.despcription)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.StartDate)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.EndDate)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Conditions)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.AwardDetils)
-                                                    </td>
-                                                    <td>
-                                                        <img src="@Url.Content(item.Image)" height="80px" width="80px" />
-                                                    </td>
-                                                    <td>
-                                                        @Html.ActionLink("Edit", "EditCompitition", new { id = item.Id }) |
-                                                        @Html.ActionLink("Details", "Compitition_Details", new { id = item.Id }) |
-                                                        @Html.ActionLink("Delete", "Compitition_Delete", new { id = item.Id })
-                                                    </td>
-                                                </tr>
-                                            }
                                         </table>
-                                    </form>
-                                }
 
+                                </div>
                             </section>
                         </div>
                     </div>
@@ -176,6 +178,5 @@
 <script src="~/Temp/assets2/js/custom.js"></script>
 <script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
 <script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
-
 
 

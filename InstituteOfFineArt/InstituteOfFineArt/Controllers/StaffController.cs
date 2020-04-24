@@ -48,7 +48,6 @@ namespace InstituteOfFineArt.Controllers
         public ActionResult Create_Compitition(Compitition a)
         {
            
-            
                 string filename = Path.GetFileNameWithoutExtension(a.ImageFile.FileName);
                 string extension = Path.GetExtension(a.ImageFile.FileName);
                 HttpPostedFileBase postedFile = a.ImageFile;
@@ -123,7 +122,12 @@ namespace InstituteOfFineArt.Controllers
 
                             if (b > 0)
                             {
-                                TempData["upmessage"] = "<script>alert('Data Updated Succesfully')</script>";
+                            string imagepath = Request.MapPath(Session["image"].ToString());
+                            if (System.IO.File.Exists(imagepath))
+                            {
+                                System.IO.File.Delete(imagepath);
+                            }
+                            TempData["upmessage"] = "<script>alert('Data Updated Succesfully')</script>";
                                 ModelState.Clear();
                                 return RedirectToAction("Create_Compitition", "Staff");
                             }
@@ -148,30 +152,44 @@ namespace InstituteOfFineArt.Controllers
 
         public ActionResult Compitition_Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-           Compitition comp = obj.Compititions.Find(id);
-
-
-            if (comp == null)
-            {
-                return HttpNotFound();
-            }
-
+            var comp = obj.Compititions.Where(model => model.Id == id).FirstOrDefault();
+            Session["Image2"] = comp.Image.ToString();
             return View(comp);
         }
 
 
+        public ActionResult Compitition_Delete(int id)
+        {
+            var comp = obj.Compititions.Where(model => model.Id == id).FirstOrDefault();
+            if (comp != null)
+            {
+                obj.Entry(comp).State = EntityState.Deleted;
+                int a = obj.SaveChanges();
+                if(a > 0)
+                {
+                    TempData["Delhmessage"] = "<script>alert('Data Deleted Successfully')</script>";
+                    string imagepath = Request.MapPath(comp.Image.ToString());
+                    if (System.IO.File.Exists(imagepath))
+                    {
+                        System.IO.File.Delete(imagepath);
+                    }
+                }
+                else
+                {
+                    TempData["notdelmessage"] = "<script>alert('Data Not Deleted Successfully')</script>";
+                }
+            }
+            return RedirectToAction("Compitition","Staff");
+        }
 
-        //public ActionResult Compitition_view(Compitition a)
-        //{
-        //    var data = obj.Compititions.ToList();
 
-        //    return View(data);
-        //}
+
+        public ActionResult Compitition_view_for_student(Compitition a)
+        {
+            var view = obj.Compititions.ToList();
+            return View(view);
+        }
+
 
         public ActionResult Logout()
         {

@@ -373,7 +373,9 @@ CHAT PANEL .chat-panel .panel-body {
     margin-right: 10px;
 }
 
-
+#checkcomp{
+    margin-left:100px;
+}
 /*==============================================
         UI ELEMENTS STYLES     
         =============================================
@@ -390,12 +392,9 @@ CHAT PANEL .chat-panel .panel-body {
         line-height: 1.428571429;
     }
     */
-
-
 /*==============================================
         MEDIA QUERIES     
         =============================================*/
-
 @media(min-width:768px) {
     #page-wrapper {
         margin: 0 0 0 260px;

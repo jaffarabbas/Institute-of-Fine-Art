@@ -4,79 +4,178 @@
     ViewBag.Title = "Compitition_Details";
 }
 
-<h2>Compitition_Details</h2>
 
-<div>
-    <h4>Compitition</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+@Html.Raw(TempData["datamessage"])
+@Html.Raw(TempData["upmessage"])
+@Html.Raw(TempData["Delhmessage"])
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+<link href="~/Temp/assets2/css/css.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/custom.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/font-awesome.css" rel="stylesheet" />
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">ADMIN</a>
+            </div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Name"] &nbsp;<a href="@Url.Action("Logout","Admin")" class="btn btn-danger square-btn-adjust">Logout</a></div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="~/Temp/assets/img/find_user.png" class="user-image img-responsive" />
+                    </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.despcription)
-        </dt>
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("ui.html")"><i class="fa fa-users fa-3x"></i>View Student<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#" onclick="mypop()">Personal Detail</a>
+                            </li>
+                            <li>
+                                <a href="#">Admission Detial</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
 
-        <dd>
-            @Html.DisplayFor(model => model.despcription)
-        </dd>
+                        <a href="@Url.Action("tab-panel.html")"><i class="fa fa-user fa-3x"></i>Compitition Details<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="@Url.Action("Create_Compitition","Staff")" onclick="mypop2()">Insert Students</a>
+                            </li>
+                            <li>
+                                <a href="#">View Students</a>
+                            </li>
+                            <li>
+                                <a href="#">Search Studnets</a>
+                            </li>
+                        </ul>
+                    </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+                    <li>
+                        <a href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                    </li>
+                </ul>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Admin Dashboard</h2>
+                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                        <div class="Insert_main" id="staff_inser">
+                            <section class="sec_insert">
 
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Conditions)
-        </dt>
+                                <div>
+                                    <h4>Compitition</h4>
+                                    <hr />
+                                    <dl class="dl-horizontal">
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Name)
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Conditions)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.Name)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AwardDetils)
-        </dt>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Type)
+                                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AwardDetils)
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.Type)
+                                        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.despcription)
+                                        </dt>
 
-        <dd>
-            <img src="@Url.Content()" height="80px" width="80px" />
-        </dd>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.despcription)
+                                        </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.StartDate)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.StartDate)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.EndDate)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.EndDate)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Conditions)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.Conditions)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.AwardDetils)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(model => model.AwardDetils)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Image)
+                                        </dt>
+
+                                        <dd>
+                                            <img src="@Url.Content(@Session["Image2"].ToString())" height="80px" width="80px" />
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                                <p>
+                                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                                    @Html.ActionLink("Back to List", "Compitition")
+                                </p>
+
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+</body>
+
+
+<script src="~/Temp/assets2/js/bootstrap.min.js"></script>
+<script src="~/Temp/assets2/js/custom.js"></script>
+<script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
+<script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
+
+
+
