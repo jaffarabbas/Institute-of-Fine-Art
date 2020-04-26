@@ -88,7 +88,8 @@
                                         <div class="card-header">Compitition</div>
                                         <div class="card-body">
                                             <h5 class="card-title">Check it</h5>
-                                            <input type="submit" value="Check it" class="btn btn-danger" />
+                                            @*@Html.ActionLink("Click", "Compitition_view_for_student", "Staff",new { @class= "btn btn-danger" })*@
+                                            <a href="@Url.Action("Compitition_view_for_student","Staff")" class="btn btn-warning">Click</a>
                                         </div>
                                     </div>
                                 </div>
