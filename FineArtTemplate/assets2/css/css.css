@@ -20,13 +20,13 @@ body {
 
 #wrapper {
     width: 100%;
-    background: #202020;
+    background: #1690A7;
 }
 
 #page-wrapper {
     padding: 15px 15px;
     min-height: 600px;
-    background: #202020;
+    background: #1690A7;
 }
 
 #page-inner {
@@ -289,7 +289,7 @@ CHAT PANEL .chat-panel .panel-body {
 }
 
 .sidebar-collapse>.nav>li {
-    border-bottom: 1px solid rgba(107, 108, 109, 0.19);
+    border-bottom: 1px solid #1690A7;
 }
 
 .sidebar-collapse .nav>li>a:hover,

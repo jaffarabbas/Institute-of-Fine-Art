@@ -1,0 +1,451 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AF5BF0D-00A4-4F7A-9D4B-C506466B4EA7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InstituteOfFineArt</RootNamespace>
+    <AssemblyName>InstituteOfFineArt</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\FINE_ARTS.mdf" />
+    <Content Include="App_Data\FINE_ARTS_log.ldf">
+      <DependentUpon>FINE_ARTS.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\FineLogin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FineLogin.Context.cs</LastGenOutput>
+      <DependentUpon>FineLogin.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\FineLogin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FineLogin.edmx</DependentUpon>
+      <LastGenOutput>FineLogin.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\FineLogin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FineLogin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FineLogin.edmx.diagram">
+      <DependentUpon>FineLogin.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Temp\assets2\css\bootstrap.css" />
+    <Content Include="Temp\assets2\css\css.css" />
+    <Content Include="Temp\assets2\css\custom.css" />
+    <Content Include="Temp\assets2\css\font-awesome.css" />
+    <Content Include="Temp\assets2\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Temp\assets2\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Temp\assets2\img\1.png" />
+    <Content Include="Temp\assets2\img\2.png" />
+    <Content Include="Temp\assets2\img\3.png" />
+    <Content Include="Temp\assets2\img\4.png" />
+    <Content Include="Temp\assets2\img\find_user.png" />
+    <Content Include="Temp\assets2\js\bootstrap.min.js" />
+    <Content Include="Temp\assets2\js\custom.js" />
+    <Content Include="Temp\assets2\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Temp\assets2\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Temp\assets2\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Temp\assets2\js\jquery-1.10.2.js" />
+    <Content Include="Temp\assets2\js\jquery.metisMenu.js" />
+    <Content Include="Temp\assets2\js\morris\morris-0.4.3.min.css" />
+    <Content Include="Temp\assets2\js\morris\morris.js" />
+    <Content Include="Temp\assets2\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Temp\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Temp\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Temp\assets\fonts\font-awesome.min.css" />
+    <Content Include="Temp\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Temp\assets\fonts\simple-line-icons.min.css" />
+    <Content Include="Temp\assets\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Temp\assets\img\bg-callout.jpg" />
+    <Content Include="Temp\assets\img\bg-masthead.jpg" />
+    <Content Include="Temp\assets\img\find_user.png" />
+    <Content Include="Temp\assets\img\portfolio-1.jpg" />
+    <Content Include="Temp\assets\img\portfolio-2.jpg" />
+    <Content Include="Temp\assets\img\portfolio-3.jpg" />
+    <Content Include="Temp\assets\img\portfolio-4.jpg" />
+    <Content Include="Temp\assets\js\jquery.min.js" />
+    <Content Include="Temp\assets\js\stylish-portfolio.js" />
+    <Content Include="Temp\cdn\animate.min.css" />
+    <Content Include="Temp\cdn\bootstrap.min.css" />
+    <Content Include="Temp\cdn\bootstrap.min.js" />
+    <Content Include="Temp\cdn\font-awesome.min.css" />
+    <Content Include="Temp\cdn\jquery.min.js" />
+    <Content Include="Temp\cdn\k.png" />
+    <Content Include="Temp\cdn\l.png" />
+    <Content Include="Temp\cdn\p.JPG" />
+    <Content Include="Temp\cdn\p.jpg.png" />
+    <Content Include="Temp\cdn\popper.min.js" />
+    <Content Include="Temp\cdn\Settings - JavaScript.html" />
+    <Content Include="Temp\css\main.css" />
+    <Content Include="Temp\images\brush-2724384__340.jpg" />
+    <Content Include="Temp\images\brush-2724403__340.jpg" />
+    <Content Include="Temp\images\brush-2725695__340.jpg" />
+    <Content Include="Temp\images\child_and_books_208362.jpg" />
+    <Content Include="Temp\images\d.jpg" />
+    <Content Include="Temp\images\deer-2480537__340.jpg" />
+    <Content Include="Temp\images\desk-office-pen-ruler.jpg" />
+    <Content Include="Temp\images\download %281%29.jpg" />
+    <Content Include="Temp\images\download %2810%29.jpg" />
+    <Content Include="Temp\images\download %282%29.jpg" />
+    <Content Include="Temp\images\download %283%29.jpg" />
+    <Content Include="Temp\images\download %284%29.jpg" />
+    <Content Include="Temp\images\download %286%29.jpg" />
+    <Content Include="Temp\images\download %287%29.jpg" />
+    <Content Include="Temp\images\download %288%29.jpg" />
+    <Content Include="Temp\images\download %289%29.jpg" />
+    <Content Include="Temp\images\download.jpg" />
+    <Content Include="Temp\images\images %281%29.jpg" />
+    <Content Include="Temp\images\images %2810%29.jpg" />
+    <Content Include="Temp\images\images %2811%29.jpg" />
+    <Content Include="Temp\images\images %2812%29.jpg" />
+    <Content Include="Temp\images\images %2813%29.jpg" />
+    <Content Include="Temp\images\images %282%29.jpg" />
+    <Content Include="Temp\images\images %283%29.jpg" />
+    <Content Include="Temp\images\images %284%29.jpg" />
+    <Content Include="Temp\images\images %285%29.jpg" />
+    <Content Include="Temp\images\images %286%29.jpg" />
+    <Content Include="Temp\images\images %287%29.jpg" />
+    <Content Include="Temp\images\images %288%29.jpg" />
+    <Content Include="Temp\images\images %289%29.jpg" />
+    <Content Include="Temp\images\images.jpg" />
+    <Content Include="Temp\images\images.png" />
+    <Content Include="Temp\images\kl.jpg" />
+    <Content Include="Temp\images\mario-luigi-yoschi-figures-163036.jpeg" />
+    <Content Include="Temp\images\panel3.png" />
+    <Content Include="Temp\images\pexels-photo-1053687.jpeg" />
+    <Content Include="Temp\images\pexels-photo-1193743.jpeg" />
+    <Content Include="Temp\images\pexels-photo-326501.jpeg" />
+    <Content Include="Temp\images\pexels-photo-374054.jpeg" />
+    <Content Include="Temp\images\pexels-photo-3778078.jpeg" />
+    <Content Include="Temp\images\pexels-photo-545008.jpeg" />
+    <Content Include="Temp\images\photo-1453749024858-4bca89bd9edc.jpg" />
+    <Content Include="Temp\images\photo-1460661419201-fd4cecdf8a8b.jpg" />
+    <Content Include="Temp\images\photo-1476703993599-0035a21b17a9.jpg" />
+    <Content Include="Temp\images\photo-1485518994577-6cd6324ade8f.jpg" />
+    <Content Include="Temp\images\photo-1485783522162-1dbb8ffcbe5b.jpg" />
+    <Content Include="Temp\images\photo-1487452066049-a710f7296400.jpg" />
+    <Content Include="Temp\images\photo-1492037766660-2a56f9eb3fcb.jpg" />
+    <Content Include="Temp\images\photo-1503454537195-1dcabb73ffb9.jpg" />
+    <Content Include="Temp\images\photo-1504438190342-5951e134ffee.jpg" />
+    <Content Include="Temp\images\photo-1513364776144-60967b0f800f.jpg" />
+    <Content Include="Temp\images\photo-1524664399170-77e7118fdb6d.jpg" />
+    <Content Include="Temp\images\photo-1537655780520-1e392ead81f2.jpg" />
+    <Content Include="Temp\images\photo-1579547621113-e4bb2a19bdd6.jpg" />
+    <Content Include="Temp\images\post-impressionist-1428142__340.jpg" />
+    <Content Include="Temp\images\rotred-banner-no-text-template-download-speedart-photoshop-for-youtube-gaming-banner-template-no-text.jpg" />
+    <Content Include="Temp\images\Social Media Yellow Image By Techall with Kaif.png" />
+    <Content Include="Temp\images\stabmenubghv.png" />
+    <Content Include="Temp\images\still-life-3406891__340.jpg" />
+    <Content Include="Temp\images\unnamed %282%29.png" />
+    <Content Include="Temp\images\watercolor-2480541__340.jpg" />
+    <Content Include="Temp\images\yellow-2482681__340.jpg" />
+    <Content Include="Temp\images\young-woman-379089__340.jpg" />
+    <Content Include="Temp\js\main.js" />
+    <Content Include="Temp\kite\assets\css\bootstrap.min.css" />
+    <Content Include="Temp\kite\assets\css\font-awesome.min.css" />
+    <Content Include="Temp\kite\assets\css\style.css" />
+    <Content Include="Temp\kite\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Temp\kite\assets\images\loading.gif" />
+    <Content Include="Temp\kite\assets\images\pattern.png" />
+    <Content Include="Temp\kite\assets\js\functions.js" />
+    <Content Include="Temp\kite\assets\js\html5shiv.js" />
+    <Content Include="Temp\kite\assets\js\jquery-2.1.0.min.js" />
+    <Content Include="Temp\kite\assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Temp\kite\assets\js\modernizr-2.8.0.min.js" />
+    <Content Include="Temp\kite\assets\js\plugins.js" />
+    <Content Include="Temp\kite\images\background\about-us.jpg" />
+    <Content Include="Temp\kite\images\background\bg-callout.jpg" />
+    <Content Include="Temp\kite\images\background\contact.jpg" />
+    <Content Include="Temp\kite\images\background\newsletter.jpg" />
+    <Content Include="Temp\kite\images\background\page-top.jpg" />
+    <Content Include="Temp\kite\images\background\portfolio-1.jpg" />
+    <Content Include="Temp\kite\images\background\portfolio-2.jpg" />
+    <Content Include="Temp\kite\images\team\team-member-1.jpg" />
+    <Content Include="Temp\kite\images\team\team-member-2.jpg" />
+    <Content Include="Temp\kite\images\team\team-member-3.jpg" />
+    <Content Include="Temp\kite\index.html" />
+    <Content Include="Temp\kite\php\contact.php" />
+    <Content Include="Temp\kite\php\subscribe.php" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admine.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Compitition.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\exibition.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FineLogin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FineLogin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FineLogin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FineLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FineLogin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\manager.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\staff.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\student.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentSub.cs">
+      <DependentUpon>FineLogin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Temp\.vscode\settings.json" />
+    <Content Include="Temp\assets2\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Temp\assets2\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Temp\assets2\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Temp\assets2\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Temp\assets2\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Temp\assets2\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Temp\assets2\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Temp\assets2\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Temp\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Temp\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Temp\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Temp\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Temp\assets\fonts\FontAwesome.otf" />
+    <Content Include="Temp\assets\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Temp\assets\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Temp\assets\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Temp\assets\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Temp\cdn\0400022056660_709008031057.pdf" />
+    <Content Include="Temp\images\experienced-painter-teaching-kid-art-260nw-606229583.webp" />
+    <Content Include="Temp\images\horse.webp" />
+    <Content Include="Temp\images\red-4500348__340.webp" />
+    <Content Include="Temp\images\sky-2478361__340.webp" />
+    <Content Include="Temp\images\still-life-565482__340.webp" />
+    <Content Include="Temp\kite\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Temp\kite\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Temp\kite\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Temp\kite\assets\fonts\FontAwesome.otf" />
+    <Content Include="Temp\kite\assets\js\jquery-2.1.0.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\login.cshtml" />
+    <Content Include="Views\Admin\admin.cshtml" />
+    <Content Include="Views\Student\student_panel.cshtml" />
+    <Content Include="Views\Staff\Staff_pannel.cshtml" />
+    <Content Include="Views\Manager\manager.cshtml" />
+    <Content Include="Views\Admin\Staff_view.cshtml" />
+    <Content Include="Views\Admin\StaffSerch.cshtml" />
+    <Content Include="Views\Admin\Staff_Details.cshtml" />
+    <Content Include="Views\Admin\Staff_Delete.cshtml" />
+    <Content Include="Views\Admin\Staff_Edit.cshtml" />
+    <Content Include="Views\Admin\AdminStudent.cshtml" />
+    <Content Include="Views\Admin\Student_view.cshtml" />
+    <Content Include="Views\Admin\Student_Delete.cshtml" />
+    <Content Include="Views\Admin\Student_Details.cshtml" />
+    <Content Include="Views\Admin\StudentSerch.cshtml" />
+    <Content Include="Views\Admin\Student_Edit.cshtml" />
+    <Content Include="Views\Staff\Compitition.cshtml" />
+    <Content Include="Views\Staff\Create_Compitition.cshtml" />
+    <Content Include="Views\Manager\Mstudent_view.cshtml" />
+    <Content Include="Views\Manager\MStudentSerch.cshtml" />
+    <Content Include="Views\Manager\MStudent_Details.cshtml" />
+    <Content Include="Views\Manager\Mstaff_view.cshtml" />
+    <Content Include="Views\Manager\MstaffSerch.cshtml" />
+    <Content Include="Views\Manager\Mstaff_Details.cshtml" />
+    <Content Include="Views\Staff\EditCompitition.cshtml" />
+    <Content Include="Views\Staff\Compitition_Details.cshtml" />
+    <Content Include="Views\Staff\Compitition_view_for_student.cshtml" />
+    <Content Include="Views\Student\Create_Compitition_from_Student.cshtml" />
+    <Content Include="Views\Student\Student_Compitition_view.cshtml" />
+    <Content Include="Views\Student\EditCompititionfromStudent.cshtml" />
+    <Content Include="Views\Staff\AwardList.cshtml" />
+    <Content Include="Views\Manager\AwardListManager.cshtml" />
+    <Content Include="Views\Manager\Exibition.cshtml" />
+    <Content Include="Views\Manager\Create_Exibition.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Student\student_Exibition.cshtml" />
+    <Content Include="Views\Manager\EditExibition.cshtml" />
+    <Content Include="Views\Manager\Exibition_Details.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exibition\" />
+    <Folder Include="Images\" />
+    <Folder Include="StudentImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50941</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50941/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

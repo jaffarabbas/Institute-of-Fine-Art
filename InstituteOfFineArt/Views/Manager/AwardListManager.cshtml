@@ -1,0 +1,159 @@
+﻿@model IEnumerable<InstituteOfFineArt.Models.Compitition>
+
+@{
+    ViewBag.Title = "AwardListManager";
+}
+
+
+@Html.Raw(TempData["LoginSuccess"])
+
+<link href="~/Temp/assets2/css/css.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/bootstrap.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/custom.css" rel="stylesheet" />
+<link href="~/Temp/assets2/css/font-awesome.css" rel="stylesheet" />
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Manager Portal</a>
+            </div>
+            <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">@Session["Username"] &nbsp;<a href="@Url.Action("Logout","Staff")" class="btn btn-danger square-btn-adjust">Logout</a></div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="~/Temp/assets/img/find_user.png" class="user-image img-responsive" />
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ui.html"><i class="fa fa-users fa-3x"></i>Students</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="@Url.Action("MStudent_view")">View List</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("MStudentSerch")">Serarch List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="tab-panel.html"><i class="fa fa-user fa-3x"></i>Staffs</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="@Url.Action("MStaff_view")">View List</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("MstaffSerch")">Serarch List</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i>Compititions</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="@Url.Action("Compitition","Staff")">Staff Side</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Student_Compitition_view","Staff")">Student List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="table.html"><i class="fa fa-table fa-3x"></i>Awards</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="@Url.Action("AwardListManager","Staff")">View List</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i>Exibition</a>
+                        <ul class="nav nav-third-level">
+
+                            <li>
+                                <a href="@Url.Action("Create_Exibition","Manager")">Create List</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Exibition","Manager")">View List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Admin Dashboard</h2>
+                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                        <div class="Insert_main" id="staff_inser">
+                            <section class="sec_insert">
+                                <div class="view_student" @*style="padding-top:30px"*@>
+                                    <table class="table">
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <th>
+
+                                                    @Html.DisplayNameFor(model => model.AwardDetils)
+                                                    @Html.DisplayFor(modelItem => item.Id)
+
+                                                </th>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.AwardDetils)
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </table>
+
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+</body>
+
+
+<script src="~/Temp/assets2/js/bootstrap.min.js"></script>
+<script src="~/Temp/assets2/js/custom.js"></script>
+<script src="~/Temp/assets2/js/jquery-1.10.2.js"></script>
+<script src="~/Temp/assets2/js/jquery.metisMenu.js"></script>
+
+
+
+
+
+
+
+

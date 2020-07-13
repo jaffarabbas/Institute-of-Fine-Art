@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FINE_ARTSModelStoreContainer" CdmEntityContainer="FINE_ARTSEntities">
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="Co_Password" ColumnName="Co-Password" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admines">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.admine">
+        <MappingFragment StoreEntitySet="admine">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nmae" ColumnName="Nmae" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="managers">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.manager">
+        <MappingFragment StoreEntitySet="managers">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="Co_Password" ColumnName="Co-Password" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compititions">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.Compitition">
+        <MappingFragment StoreEntitySet="Compititions">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="AwardDetils" ColumnName="AwardDetils" />
+          <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="despcription" ColumnName="despcription" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentSubs">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.StudentSub">
+        <MappingFragment StoreEntitySet="StudentSub">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exibitions">
+      <EntityTypeMapping TypeName="FINE_ARTSModel.exibition">
+        <MappingFragment StoreEntitySet="exibition">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
