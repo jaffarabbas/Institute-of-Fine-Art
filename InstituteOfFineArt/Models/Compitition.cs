@@ -17,6 +17,7 @@ namespace InstituteOfFineArt.Models
 
     public partial class Compitition
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         [Required(ErrorMessage = "Required")]
         public string Type { get; set; }
