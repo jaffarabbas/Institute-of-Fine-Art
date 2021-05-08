@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="FINE_ARTSModel.manager" Width="1.5" PointX="4.25" PointY="2.5" />
         <EntityTypeShape EntityType="FINE_ARTSModel.student" Width="1.5" PointX="2.375" PointY="0.875" />
         <EntityTypeShape EntityType="FINE_ARTSModel.Compitition" Width="1.5" PointX="1.375" PointY="4.375" />
-        <EntityTypeShape EntityType="FINE_ARTSModel.StudentSub" Width="1.5" PointX="3.375" PointY="5.75" />
+        <EntityTypeShape EntityType="FINE_ARTSModel.StudentSub" Width="1.5" PointX="3.625" PointY="5.25" />
         <EntityTypeShape EntityType="FINE_ARTSModel.exibition" Width="1.5" PointX="5.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
